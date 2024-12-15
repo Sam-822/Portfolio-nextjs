@@ -9,5 +9,9 @@
     "env": {
       "NPM_FLAGS": "--legacy-peer-deps"
     }
+  },
+  "commands": {
+    "install": "npm install --legacy-peer-deps",
+    "build": "next build"
   }
 }
