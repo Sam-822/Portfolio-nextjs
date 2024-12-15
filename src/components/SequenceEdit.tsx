@@ -7,15 +7,13 @@ import { toast } from "react-toastify";
 
 export default function SequenceEdit({ startItems }: any) {
   const [items, setItems] = useState(startItems);
-	const [loading, setLoading] = useState(false)
 
   const changeSequence = async (value: any) => {
     // console.log({ value });
-		// Update the sequence on the server
-		setItems(value);
+    // Update the sequence on the server
+    setItems(value);
     try {
-      setLoading(true);
-      const sequence = value.map((project:any) => project.slug);
+      const sequence = value.map((project: any) => project.slug);
 
       const res = await fetch("/api/sequence", {
         method: "PUT",
@@ -27,10 +25,13 @@ export default function SequenceEdit({ startItems }: any) {
       if (data.status !== "success") throw new Error(data.message);
 
       toast.success("Sequence updated successfully!");
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message); // Safe to access `message` property
+      } else {
+        toast.error("An unknown error occurred.");
+      }
     } finally {
-      setLoading(false);
     }
   };
 
@@ -39,7 +40,7 @@ export default function SequenceEdit({ startItems }: any) {
       <SortableList
         items={items}
         onChange={changeSequence}
-        renderItem={(item:any) => (
+        renderItem={(item: any) => (
           <SortableList.Item id={item.id}>
             {item.title}
             <SortableList.DragHandle />

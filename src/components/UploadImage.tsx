@@ -82,8 +82,6 @@ const UploadImage: React.FC<UploadImageProps> = ({
       {({
         imageList,
         onImageUpload,
-        onImageRemoveAll,
-        onImageUpdate,
         onImageRemove,
         isDragging,
         dragProps,

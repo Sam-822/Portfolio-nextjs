@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   DndContext,
   DragEndEvent,
@@ -29,8 +29,6 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
   projects,
   setProjects,
 }) => {
-  const [loading, setLoading] = useState(false);
-
   const sensors = useSensors(useSensor(MouseSensor), useSensor(TouchSensor));
 
   const handleDragEnd = async (event: DragEndEvent) => {
@@ -48,7 +46,6 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
 
     // Update the sequence on the server
     try {
-      setLoading(true);
       const sequence = reorderedProjects.map((project) => project.slug);
 
       const res = await fetch("/api/sequence", {
@@ -61,10 +58,13 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
       if (data.status !== "success") throw new Error(data.message);
 
       toast.success("Sequence updated successfully!");
-    } catch (error: any) {
-      toast.error(error.message);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        toast.error(error.message); // Safe to access `message` property
+      } else {
+        toast.error("An unknown error occurred.");
+      }
     } finally {
-      setLoading(false);
     }
   };
 
@@ -106,7 +106,9 @@ const SortableRow: React.FC<{ project: Project; index: number }> = ({
       ref={setNodeRef}
       {...attributes}
       {...listeners}
-      className={`border-b !py-1.5 ${isDragging ? "bg-gray-200 bg-opacity-10" : ""}`}
+      className={`border-b !py-1.5 ${
+        isDragging ? "bg-gray-200 bg-opacity-10" : ""
+      }`}
     >
       <td>{index + 1}</td>
       <td>{project.title}</td>

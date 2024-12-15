@@ -1,4 +1,4 @@
-import { Button, Progress } from "@nextui-org/react";
+import { Progress } from "@nextui-org/react";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";

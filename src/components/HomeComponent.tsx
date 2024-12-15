@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import headerImg from "../assets/header_img.png";
 import Typed from "typed.js";
-import Image from "next/image";
 
 const Home = () => {
   useEffect(() => {

@@ -1,4 +1,3 @@
-import ProjectTable from "@/components/ProjectTable";
 import SequenceEdit from "@/components/SequenceEdit";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/router";

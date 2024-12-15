@@ -1,4 +1,4 @@
-import { Button, Checkbox, form } from "@nextui-org/react";
+import { Button, Checkbox } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import React, { ChangeEvent, useEffect, useState } from "react";
 import { toast } from "react-toastify";
@@ -7,7 +7,6 @@ import Swal from "sweetalert2";
 const Project = () => {
   const router = useRouter();
   const { projectID } = router.query;
-  const [data, setData] = useState("");
   const [formData, setFormData] = useState({
     title: "",
     description: "",

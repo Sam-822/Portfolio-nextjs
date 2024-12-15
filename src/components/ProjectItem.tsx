@@ -1,6 +1,5 @@
-import { Button, Skeleton, Tooltip } from "@nextui-org/react";
+import { Button, Skeleton } from "@nextui-org/react";
 import Link from "next/link";
-import { useRouter } from "next/router";
 import React from "react";
 
 const ProjectItem = (props: any) => {
@@ -14,7 +13,6 @@ const ProjectItem = (props: any) => {
     live,
     loading,
   } = props;
-  const router = useRouter();
 
   if (loading)
     return (

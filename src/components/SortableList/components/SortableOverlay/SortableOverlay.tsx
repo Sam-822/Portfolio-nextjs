@@ -12,9 +12,10 @@ const dropAnimationConfig: DropAnimation = {
   })
 };
 
-interface Props {}
+/* eslint-disable @typescript-eslint/no-empty-interface */
+// interface Props {} 
 
-export function SortableOverlay({ children }: PropsWithChildren<Props>) {
+export function SortableOverlay({ children }: PropsWithChildren<any>) {
   return (
     <DragOverlay dropAnimation={dropAnimationConfig}>{children}</DragOverlay>
   );

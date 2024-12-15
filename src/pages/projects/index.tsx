@@ -1,7 +1,4 @@
-import Footer from "@/components/Footer";
-import NavBar from "@/components/NavBar";
 import ProjectItem from "@/components/ProjectItem";
-import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 const Projects = () => {
