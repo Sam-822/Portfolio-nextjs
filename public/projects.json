@@ -1,0 +1,282 @@
+[
+  {
+    "title": "Flaunt Green | Sustainable Clothing for Men & Women",
+    "description": "An e-commerce website for a sustainable clothing brand including GTM for user behaviour analysis and SSR for SEO optimization.",
+    "link": "https://shop.flauntgreen.in/",
+    "deployed": true,
+    "slug": "flaunt_green",
+    "image": "/projects/flaunt-green/flauntgreen.png",
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 0,
+    "live": true,
+    "id": 0
+  },
+  {
+    "title": "BuyBack",
+    "description": "A comprehensive application designed for store executives to manage buyback of old devices, for liquidators to bid on lots of bought devices and manage delivery of those lots.",
+    "link": null,
+    "deployed": false,
+    "slug": "buyback",
+    "image": null,
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 1,
+    "live": true,
+    "id": 1
+  },
+  {
+    "title": "Rewards.Gnext",
+    "description": "A multi country multi language web app designed to manage participation and distribution of a rewards program equipped with an admin panel.",
+    "link": "https://rewards.gnextonline.com/",
+    "deployed": false,
+    "slug": "rewards_gnext",
+    "image": "/projects/rewards-gnext/rewards_gnext.png",
+    "image_path": "/projects/rewards-gnext/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 2,
+    "live": true,
+    "id": 7
+  },
+  {
+    "title": "Offer Unicorn",
+    "description": "An admin panel designed to help a national chain of stores create and manage offers, collect participation and analyze user participation.",
+    "link": null,
+    "deployed": false,
+    "slug": "offer_unicorn",
+    "image": null,
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "index": 3,
+    "live": true,
+    "id": 8
+  },
+  {
+    "title": "Books Palace - The perfect place to find books to read",
+    "description": "Book Store app made using Next.Js to explore books extracted from books.google.com api.",
+    "link": "https://bookstore-sooty-beta.vercel.app/",
+    "deployed": true,
+    "slug": "book_palace",
+    "image": "/projects/book-palace/BookPalace.png",
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 4,
+    "live": false,
+    "id": 2
+  },
+  {
+    "title": "ShopBuddy- E-Commerce template",
+    "description": "An E-Commerce website created using next.js which gets data from fakestoreapi.com.",
+    "link": "https://e-commerce-smoky-rho.vercel.app/",
+    "deployed": true,
+    "slug": "e_commerce",
+    "image": "/projects/shop-buddy/e-commerce.png",
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 5,
+    "live": false,
+    "id": 3
+  },
+  {
+    "title": "FoodBuddy - Your culinary companion",
+    "description": "React application to discover a vast variety of dishes and how to make them pulled from themealdb.com.",
+    "link": "https://foodbuddyabdul.netlify.app/",
+    "deployed": true,
+    "slug": "food_buddy",
+    "image": "/projects/food-buddy/FoodBuddy.png",
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 6,
+    "live": false,
+    "id": 4
+  },
+  {
+    "title": "Fake News Detection",
+    "description": "Fake News Detection system utilizing LSTM neural network to identify and stop the spread of false news.",
+    "link": "https://github.com/Sam-822/FAKE-NEWS-DETECTION",
+    "deployed": false,
+    "slug": "fake_news",
+    "image": "/projects/fake-news/FakeNews.png",
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 7,
+    "live": false,
+    "id": 6
+  },
+  {
+    "title": "Attendance Monitoring System",
+    "description": "A Blockchain Enabled Attendance Monitoring system that uses face recognition to mark attendance.",
+    "link": "https://github.com/Sam-822/Attendance-Monitoring-System",
+    "deployed": false,
+    "slug": "attendance_monitoring",
+    "image": "/projects/attendance-monitoring/AttendanceMonitoring.png",
+    "image_path": "/projects/flaunt-green/",
+    "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png",
+      "7.png",
+      "8.png"
+    ],
+    "collage_images": [
+      "2.png",
+      "3.png",
+      "4.png",
+      "1.png",
+      "6.png",
+      "5.png",
+      "8.png"
+    ],
+    "index": 8,
+    "live": false,
+    "id": 5
+  }
+]
