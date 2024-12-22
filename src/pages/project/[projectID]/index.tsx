@@ -20,6 +20,8 @@ interface Project {
   collage_images: string[];
   index: number;
   live: boolean;
+  descriptionList: string[];
+  techStack: string[];
 }
 const Project = () => {
   const router = useRouter();
@@ -94,8 +96,10 @@ const Project = () => {
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={
-                      currentProject.image_path +
                       currentProject.collage_images[0]
+                      ? currentProject.image_path +
+                      currentProject.collage_images[0] : 
+											'/no-image-found.png'
                     }
                   />
                 </motion.div>
@@ -111,8 +115,10 @@ const Project = () => {
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={
-                      currentProject.image_path +
                       currentProject.collage_images[1]
+                        ? currentProject.image_path +
+                          currentProject.collage_images[1]
+                        : "/no-image-found.png"
                     }
                   />
                 </motion.div>
@@ -128,8 +134,10 @@ const Project = () => {
                     alt="gallery"
                     className="w-full h-full object-cover object-center block"
                     src={
+                      currentProject.collage_images[2]?
                       currentProject.image_path +
-                      currentProject.collage_images[2]
+                      currentProject.collage_images[2]: 
+											'/no-image-found.png'
                     }
                   />
                 </motion.div>
@@ -147,8 +155,9 @@ const Project = () => {
                     alt="gallery"
                     className="w-full h-full object-cover object-center block"
                     src={
+                      currentProject.collage_images[3]?
                       currentProject.image_path +
-                      currentProject.collage_images[3]
+                      currentProject.collage_images[3]: '/no-image-found.png'
                     }
                   />
                 </motion.div>
@@ -164,8 +173,9 @@ const Project = () => {
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={
+											currentProject.collage_images[4]?
                       currentProject.image_path +
-                      currentProject.collage_images[4]
+                      currentProject.collage_images[4] : '/no-image-found.png'
                     }
                   />
                 </motion.div>
@@ -181,27 +191,54 @@ const Project = () => {
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
                     src={
+                      currentProject.collage_images[5]?
                       currentProject.image_path +
-                      currentProject.collage_images[5]
+                      currentProject.collage_images[5]: '/no-image-found.png'
                     }
                   />
                 </motion.div>
               </div>
             </div>
             {/* Project Description */}
-            <div className="relative mt-10">
-              <h3 className="text-3xl text-crimson">Project Description:</h3>
-              <ul className="list-disc list-inside">
-                <li className="text-lg">List item 1</li>
-                <li className="text-lg">List item 2</li>
-                <li className="text-lg">List item 3</li>
-                <li className="text-lg">List item 4</li>
-              </ul>
-            </div>
+            {currentProject &&
+              currentProject?.descriptionList &&
+              currentProject?.descriptionList?.length > 0 && (
+                <div className="relative mt-10 w-full">
+                  <h3 className="text-3xl text-crimson mb-2">
+                    Project Description:
+                  </h3>
+                  <ul className="list-disc list-inside text-lg">
+                    {currentProject.descriptionList.map(
+                      (project: string, index: number) => (
+                        <li key={index}>{project}</li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              )}
+            {/* Tech Stack */}
+            {currentProject &&
+              currentProject?.techStack &&
+              currentProject?.techStack?.length > 0 && (
+                <div className="relative mt-10 w-full">
+                  <h3 className="text-3xl text-crimson mb-2">
+                    Technologies Used:
+                  </h3>
+                  <ul className="list-disc list-inside text-lg">
+                    {currentProject.techStack.map(
+                      (project: string, index: number) => (
+                        <li key={index}>{project}</li>
+                      )
+                    )}
+                  </ul>
+                </div>
+              )}
             {/* Image Swiper */}
             <section className="max-w-full">
               <div className="relative aspect-video max-w-screen overflow-hidden">
-              <h3 className="text-3xl text-crimson relative top-10">Image Gallery:</h3>
+                <h3 className="text-3xl text-crimson relative top-10">
+                  Image Gallery:
+                </h3>
                 {currentProject.all_images ? (
                   <Swiper
                     spaceBetween={50}
@@ -211,14 +248,14 @@ const Project = () => {
                     navigation={true}
                     className="max-w-full aspect-video"
                   >
-                    {Array(currentProject.all_images.length - 1)
+                    {Array(currentProject.all_images.length)
                       .fill(0)
                       .map((_, index) => (
                         <SwiperSlide key={index}>
                           <Image
                             src={
                               currentProject.image_path +
-                              currentProject.all_images[index + 1]
+                              currentProject.all_images[index]
                             }
                             height={1080}
                             width={1920}

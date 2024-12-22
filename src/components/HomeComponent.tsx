@@ -6,13 +6,9 @@ const Home = () => {
     const typed = new Typed("#type-list", {
       strings: [
         "React.JS",
-        "Next.JS",
-        "Express.JS",
-        "Node.JS",
-        "MongoDB",
-        "Vite",
-        "Bootstrap",
-        "Tailwind",
+        "NextJS",
+        "Tailwind CSS",
+				"NextUI"
       ],
       typeSpeed: 50,
       backSpeed: 20,
@@ -43,7 +39,7 @@ const Home = () => {
             to full-stack development projects effectively.
           </p>
         </div>
-        <div className="z-10 autoBob">
+        <div className="z-10">
           <svg
             id="sw-js-blob-svg"
             viewBox="0 0 100 100"

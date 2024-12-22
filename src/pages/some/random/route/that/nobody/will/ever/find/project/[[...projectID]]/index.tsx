@@ -19,6 +19,8 @@ const Project = () => {
     collage_images: "",
     index: "",
     live: false,
+    descriptionList: "",
+    techStack: "",
   });
   const [projectData, setProjectData] = useState<any>();
   const [errors, setErrors] = useState({
@@ -36,7 +38,10 @@ const Project = () => {
   });
 
   const handleFormChange = (
-    e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLSelectElement>
+    e:
+      | ChangeEvent<HTMLInputElement>
+      | ChangeEvent<HTMLSelectElement>
+      | ChangeEvent<HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -123,6 +128,10 @@ const Project = () => {
           ...formData,
           all_images: parseInputArray(formData.all_images),
           collage_images: parseInputArray(formData.collage_images),
+          descriptionList: formData.descriptionList
+            .split("|")
+            .map((desc) => desc.trim()),
+          techStack: formData.techStack.split("|").map((tech) => tech.trim()),
         }),
       });
       const submitData = await submitRes.json();
@@ -141,17 +150,19 @@ const Project = () => {
       if (!projectRes.ok)
         throw new Error(projectData.message || "Could not get project data");
       setFormData({
-        title: projectData.data.title,
-        description: projectData.data.description,
-        slug: projectData.data.slug,
-        link: projectData.data.link,
-        deployed: projectData.data.deployed,
-        image: projectData.data.image,
-        image_path: projectData.data.image_path,
-        all_images: projectData.data.all_images,
-        collage_images: projectData.data.collage_images,
-        index: projectData.data.index,
-        live: projectData.data.live,
+        title: projectData?.data?.title,
+        description: projectData?.data?.description,
+        slug: projectData?.data?.slug,
+        link: projectData?.data?.link,
+        deployed: projectData?.data?.deployed,
+        image: projectData?.data?.image,
+        image_path: projectData?.data?.image_path,
+        all_images: projectData?.data?.all_images,
+        collage_images: projectData?.data?.collage_images,
+        index: projectData?.data?.index,
+        live: projectData?.data?.live,
+        descriptionList: projectData?.data?.descriptionList?.join(" | "),
+        techStack: projectData?.data?.techStack?.join(" | "),
       });
       setProjectData(projectData.data);
     } catch (error: any) {
@@ -174,6 +185,10 @@ const Project = () => {
           ...formData,
           all_images: parseInputArray(formData.all_images),
           collage_images: parseInputArray(formData.collage_images),
+          descriptionList: formData.descriptionList
+            .split("|")
+            .map((desc) => desc.trim()),
+          techStack: formData.techStack.split("|").map((tech) => tech.trim()),
         }),
       });
       const submitData = await submitRes.json();
@@ -199,7 +214,7 @@ const Project = () => {
   };
 
   return (
-    <form action={handleSubmitForm} className="grid grid-cols-2 gap-4">
+    <form action={handleSubmitForm} className="grid grid-cols-2 gap-4 mb-4">
       {/* Title */}
       <div>
         <label htmlFor="title">Project Title</label>
@@ -249,7 +264,7 @@ const Project = () => {
       </div>
       {/* Link */}
       <div>
-        <label htmlFor="slug">Project Link</label>
+        <label htmlFor="link">Project Link</label>
         <input
           type="text"
           name="link"
@@ -352,6 +367,35 @@ const Project = () => {
           </Checkbox>
         </div>
       </div>
+      {/* Bullet points */}
+      <div className="col-span-2">
+        <label htmlFor="descriptionList">
+          Project bullet points (seperate by | )
+        </label>
+        <textarea
+          name="descriptionList"
+          id="descriptionList"
+          className="form-input"
+          value={formData.descriptionList}
+          onChange={handleFormChange}
+          placeholder="eg. Bullet point 1 | Bullet point 2 | Bullet point 3"
+					rows={5}
+        ></textarea>
+      </div>
+      {/* Tech Stack */}
+      <div className="col-span-2">
+        <label htmlFor="techStack">Technologies Used (seperate by | )</label>
+        <textarea
+          name="techStack"
+          id="techStack"
+          className="form-input"
+          value={formData.techStack}
+          onChange={handleFormChange}
+          placeholder="eg. Technology 1 | Technology 2 | Technology 3"
+					rows={5}
+        ></textarea>
+      </div>
+      {/* Submit */}
       <div className="col-span-2">
         <Button
           type="submit"

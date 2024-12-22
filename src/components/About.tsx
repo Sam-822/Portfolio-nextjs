@@ -6,13 +6,13 @@ const About = () => {
       <div className="pt-40">
         <h3 className="text-5xl text-crimson autoShowText mb-6">About</h3>
         <p className="autoShowText text-xl mb-4">
-          I`&apos;m Abdul Samad Ansari, a passionate MERN stack developer with a flair
+          I&apos;m Abdul Samad Ansari, a passionate MERN stack developer with a flair
           for building dynamic and interactive web applications. My
           expertiselies in the following technologies:
         </p>
         <ul className="autoShowText text-xl list-disc list-inside mb-4">
           <li>
-            NextJS: I`&apos;ve been a NextJS developer intern since August 2024 at
+            NextJS: I&apos;ve been a NextJS developer intern since August 2024 at
             BeamInnovate pvt ltd.
           </li>
           <li>
@@ -28,14 +28,14 @@ const About = () => {
             Express.
           </li>
           <li>
-            Node.js: I`&apos;m proficient in server-side scripting using Node.js,
+            Node.js: I&apos;m proficient in server-side scripting using Node.js,
             ensuring smooth communication between the client and server.
           </li>
         </ul>
         <p className="autoShowText text-xl">
-          Whether it`&apos;s crafting pixel-perfect UI components or optimizing
-          backend performance, I`&apos;m committed to delivering clean, code that
-          adheres to industry standards. Let`&apos;s collaborate and bring your ideas
+          Whether it&apos;s crafting pixel-perfect UI components or optimizing
+          backend performance, I&apos;m committed to delivering clean, code that
+          adheres to industry standards. Let&apos;s collaborate and bring your ideas
           to life! Feel free to connect with me on LinkedIn or explore my
           projects on GitHub. You can also reach out via email at{" "}
           <a

@@ -70,6 +70,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       newProject.collage_images = newProject.collage_images || [];
       newProject.image_path =
         newProject.image_path || "/projects/flaunt-green/";
+			newProject.descriptionList = newProject.descriptionList || []
+			newProject.techStack = newProject.techStack || []
 
       projects.push(newProject);
       writeProjects(projects); // Save the new project list

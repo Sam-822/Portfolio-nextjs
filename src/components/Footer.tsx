@@ -6,7 +6,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <>
-      <footer className="text-gray-400 bg-gray-900 body-font z-10 relative">
+      <footer className="text-gray-200 glass sahdow-3xl shadow-[0_-2px_10px_rgba(255,255,255,0.3)]  body-font z-10 relative mt-4">
         <div className="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
           <Link
             href="/"
@@ -15,12 +15,12 @@ const Footer = () => {
             <Logo />
             <span className="ml-3 text-xl">Abdul Samad Ansari</span>
           </Link>
-          <p className="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
+          <p className="text-sm text-gray-300 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4">
             © 2024 Abdul Samad Ansari —
             <Tooltip content="Github Profile">
               <a
                 href="https://github.com/Sam-822"
-                className="text-gray-500 ml-1"
+                className="text-gray-100 ml-1"
                 target="_blank"
                 rel="noopener noreferrer"
               >

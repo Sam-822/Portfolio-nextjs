@@ -28,7 +28,19 @@
     ],
     "index": 0,
     "live": true,
-    "id": 0
+    "id": 0,
+    "descriptionList": [
+      "An e-commerce website made for the flauntgreen team.",
+      "Features fully dynamic pages with server side rendering to optimize SEO.",
+      "Includes GTM tracking to track user behavior and patterns that help in making business decisions.",
+      "Fully responsive layout across all devices."
+    ],
+    "techStack": [
+      "NextJS",
+      "TailwindCSS",
+      "NextUI",
+      "Misc. react utility libraries."
+    ]
   },
   {
     "title": "BuyBack",
@@ -49,17 +61,28 @@
       "8.png"
     ],
     "collage_images": [
-      "2.png",
-      "3.png",
-      "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      ""
     ],
     "index": 1,
     "live": true,
-    "id": 1
+    "id": 1,
+    "descriptionList": [
+      "This was one of the most comprehensive project I've worked on.",
+      "It was designed to help a national chain of stores buy used devices back from its customers and auction them off to liquidators.",
+      "It featured dashboards for store, warehouses and liquidators to provide a complete solution to the \"buyback\" problem.",
+      "A great learning experience as this was my first real-life project that was going to have actual users.",
+      "Some of the features:",
+      "A QNA section that was used to analyze the condition and calculate the price  of the device.",
+      "Store level dashboard to view and manage orders, create shipments and redeem coupons.",
+      "Warehouse level dashboard to approve shipments, wipe data from devices and upload their certificate as proof, create lots for auctions.",
+      "Liquidator section from where liquidators could recharge their wallets, place bids on active auctions and compete with other liquidators."
+    ],
+    "techStack": [
+      "NextJS",
+      "TailwindCSS",
+      "NextUI",
+      "Misc. react libraries for various utilities."
+    ]
   },
   {
     "title": "Rewards.Gnext",
@@ -73,24 +96,28 @@
       "1.png",
       "2.png",
       "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      "4.png"
     ],
     "collage_images": [
       "2.png",
       "3.png",
       "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      "1.png"
     ],
     "index": 2,
     "live": true,
-    "id": 7
+    "id": 2,
+    "descriptionList": [
+      "This project was made for a multi national seller to create and manage reward schemes.",
+      "Gained over 1700 enrollments across 3 countries in a timespan of a month.",
+      "Featured internationalization to help users from other countries use the website in their native language."
+    ],
+    "techStack": [
+      "NextJS",
+      "TailwindCSS",
+      "NextUI",
+      "React i18n"
+    ]
   },
   {
     "title": "Offer Unicorn",
@@ -99,30 +126,26 @@
     "deployed": false,
     "slug": "offer_unicorn",
     "image": null,
-    "image_path": "/projects/flaunt-green/",
+    "image_path": "/projects/offer-unicorn/",
     "all_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      ""
     ],
     "collage_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      ""
     ],
     "index": 3,
-    "live": true,
-    "id": 8
+    "live": false,
+    "id": 3,
+    "descriptionList": [
+      "This project was designed to help a national chain of Apple device vendors create offers.",
+      "Users could create and manage offers, analyze user participation and behaviors.",
+      "Was used during the iPhone 16 launch period."
+    ],
+    "techStack": [
+      "NextJS",
+      "TailwindCSS",
+      "NextUI"
+    ]
   },
   {
     "title": "Books Palace - The perfect place to find books to read",
@@ -131,29 +154,24 @@
     "deployed": true,
     "slug": "book_palace",
     "image": "/projects/book-palace/BookPalace.png",
-    "image_path": "/projects/flaunt-green/",
+    "image_path": "/projects/book-palace/",
     "all_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      "BookPalace.png"
     ],
     "collage_images": [
-      "2.png",
-      "3.png",
-      "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      "BookPalace.png"
     ],
     "index": 4,
     "live": false,
-    "id": 2
+    "id": 4,
+    "descriptionList": [
+      "Another small nextjs project to understand dynamic routes and data fetching on dynamic pages"
+    ],
+    "techStack": [
+      "NextJS",
+      "Bootstrap",
+      "Google API (to fetch books data)"
+    ]
   },
   {
     "title": "ShopBuddy- E-Commerce template",
@@ -162,29 +180,24 @@
     "deployed": true,
     "slug": "e_commerce",
     "image": "/projects/shop-buddy/e-commerce.png",
-    "image_path": "/projects/flaunt-green/",
+    "image_path": "/projects/shop-buddy/",
     "all_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      "e-commerce.png"
     ],
     "collage_images": [
-      "2.png",
-      "3.png",
-      "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      "e-commerce.png"
     ],
     "index": 5,
     "live": false,
-    "id": 3
+    "id": 5,
+    "descriptionList": [
+      "A small e-commerce project made to understand dynamic data fetching and nextjs routing behavior"
+    ],
+    "techStack": [
+      "NextJS",
+      "Bootstrap",
+      "fakestoreapi"
+    ]
   },
   {
     "title": "FoodBuddy - Your culinary companion",
@@ -193,29 +206,26 @@
     "deployed": true,
     "slug": "food_buddy",
     "image": "/projects/food-buddy/FoodBuddy.png",
-    "image_path": "/projects/flaunt-green/",
+    "image_path": "/projects/food-buddy/",
     "all_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      "FoodBuddy.png"
     ],
     "collage_images": [
-      "2.png",
-      "3.png",
-      "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      "FoodBuddy.png"
     ],
     "index": 6,
     "live": false,
-    "id": 4
+    "id": 6,
+    "descriptionList": [
+      "My first react application.",
+      "Showcases dynamic data fetching.",
+      "Dynamic routes using react-browser-router"
+    ],
+    "techStack": [
+      "React",
+      "Bootstrap",
+      "The Meal DB (to fetch recipes)"
+    ]
   },
   {
     "title": "Fake News Detection",
@@ -226,27 +236,25 @@
     "image": "/projects/fake-news/FakeNews.png",
     "image_path": "/projects/flaunt-green/",
     "all_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      ""
     ],
     "collage_images": [
-      "2.png",
-      "3.png",
-      "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      ""
     ],
     "index": 7,
     "live": false,
-    "id": 6
+    "id": 7,
+    "descriptionList": [
+      "Data sourced from two datasets: real news (True.csv) and fake news (Fake.csv).",
+      "Preprocessing steps include combining title and text, removing stopwords, and tokenizing words using NLTK and Gensim libraries.",
+      "Deep Learning Model: Sequential model with an Embedding layer, Bidirectional LSTM layer, and Dense layers for classification.",
+      "Traditional ML Classifiers: Decision Tree, Passive Aggressive, Random Forest, Logistic Regression, Naive Bayes, and k-Nearest Neighbors (kNN) classifiers.",
+      "Evaluation metrics used include accuracy scores and confusion matrices.",
+      "Results showed high accuracy across all models, with LSTM achieving the highest accuracy of 99.82%."
+    ],
+    "techStack": [
+      "Python - (NLTK, Gensim, TensorFlow, Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn)"
+    ]
   },
   {
     "title": "Attendance Monitoring System",
@@ -257,26 +265,25 @@
     "image": "/projects/attendance-monitoring/AttendanceMonitoring.png",
     "image_path": "/projects/flaunt-green/",
     "all_images": [
-      "1.png",
-      "2.png",
-      "3.png",
-      "4.png",
-      "5.png",
-      "6.png",
-      "7.png",
-      "8.png"
+      ""
     ],
     "collage_images": [
-      "2.png",
-      "3.png",
-      "4.png",
-      "1.png",
-      "6.png",
-      "5.png",
-      "8.png"
+      ""
     ],
     "index": 8,
     "live": false,
-    "id": 5
+    "id": 8,
+    "descriptionList": [
+      "Collaborated with a 3-member team to design and implement a real-time attendance monitoring system.",
+      "Engineered a robust attendance solution, integrating advanced face recognition and blockchain technologies.",
+      "Achieved 99.38% accuracy in face recognition, enhancing reliability in attendance tracking.",
+      "Co-authored a research paper published in an IEEE journal, sharing project insights with the academic community."
+    ],
+    "techStack": [
+      "Python",
+      "Flask",
+      "OpenCV",
+      "Web3"
+    ]
   }
 ]
