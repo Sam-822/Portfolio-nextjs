@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Head from "next/head";
 interface Project {
   title: string;
   description: string;
@@ -53,6 +54,9 @@ const Project = () => {
 
   return (
     <section className="overflow-hidden">
+			<Head>
+				<title>Abdul Samad{"'"}s Portfolio | {currentProject?.title} </title>
+			</Head>
       {loading && (
         <Progress
           isIndeterminate

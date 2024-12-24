@@ -1,4 +1,5 @@
 import ProjectItem from "@/components/ProjectItem";
+import Head from "next/head";
 import React, { useEffect, useState } from "react";
 
 const Projects = () => {
@@ -35,6 +36,9 @@ const Projects = () => {
   }, []);
   return (
     <>
+		<Head>
+			<title>Abdul Samad{"'"}s Portfolio | My Projects</title>
+		</Head>
       <h3 className="text-5xl text-crimson">Projects</h3>
       <div className="grid my-3 grid-cols-1 sm:grid-cols-2 px-2 sm:px-32">
         {loading
