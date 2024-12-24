@@ -41,7 +41,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         res.status(200).json({ status: "success", data: project });
       } else {
         // Return all projects if no slug is provided
-        res.status(200).json({ status: "success", data: projects });
+        res
+          .status(200)
+          .json({
+            status: "success",
+            data: projects,
+          });
       }
       break;
     }
@@ -70,8 +75,8 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
       newProject.collage_images = newProject.collage_images || [];
       newProject.image_path =
         newProject.image_path || "/projects/flaunt-green/";
-			newProject.descriptionList = newProject.descriptionList || []
-			newProject.techStack = newProject.techStack || []
+      newProject.descriptionList = newProject.descriptionList || [];
+      newProject.techStack = newProject.techStack || [];
 
       projects.push(newProject);
       writeProjects(projects); // Save the new project list

@@ -40,7 +40,8 @@
       "TailwindCSS",
       "NextUI",
       "Misc. react utility libraries."
-    ]
+    ],
+    "active": true
   },
   {
     "title": "BuyBack",
@@ -48,8 +49,8 @@
     "link": null,
     "deployed": false,
     "slug": "buyback",
-    "image": null,
-    "image_path": "/projects/flaunt-green/",
+    "image": "/projects/buyback/buyback.png",
+    "image_path": "/projects/buyback/",
     "all_images": [
       "1.png",
       "2.png",
@@ -58,10 +59,17 @@
       "5.png",
       "6.png",
       "7.png",
-      "8.png"
+      "8.png",
+      "9.png",
+      "buyback.png"
     ],
     "collage_images": [
-      ""
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
+      "5.png",
+      "6.png"
     ],
     "index": 1,
     "live": true,
@@ -82,7 +90,8 @@
       "TailwindCSS",
       "NextUI",
       "Misc. react libraries for various utilities."
-    ]
+    ],
+    "active": true
   },
   {
     "title": "Rewards.Gnext",
@@ -96,13 +105,15 @@
       "1.png",
       "2.png",
       "3.png",
-      "4.png"
+      "4.png",
+      "rewards_gnext.png"
     ],
     "collage_images": [
       "2.png",
       "3.png",
       "4.png",
-      "1.png"
+      "1.png",
+      "rewards_gnext.png"
     ],
     "index": 2,
     "live": true,
@@ -117,7 +128,8 @@
       "TailwindCSS",
       "NextUI",
       "React i18n"
-    ]
+    ],
+    "active": true
   },
   {
     "title": "Offer Unicorn",
@@ -145,7 +157,8 @@
       "NextJS",
       "TailwindCSS",
       "NextUI"
-    ]
+    ],
+    "active": false
   },
   {
     "title": "Books Palace - The perfect place to find books to read",
@@ -156,9 +169,17 @@
     "image": "/projects/book-palace/BookPalace.png",
     "image_path": "/projects/book-palace/",
     "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
       "BookPalace.png"
     ],
     "collage_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
       "BookPalace.png"
     ],
     "index": 4,
@@ -171,7 +192,8 @@
       "NextJS",
       "Bootstrap",
       "Google API (to fetch books data)"
-    ]
+    ],
+    "active": true
   },
   {
     "title": "ShopBuddy- E-Commerce template",
@@ -182,9 +204,17 @@
     "image": "/projects/shop-buddy/e-commerce.png",
     "image_path": "/projects/shop-buddy/",
     "all_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
       "e-commerce.png"
     ],
     "collage_images": [
+      "1.png",
+      "2.png",
+      "3.png",
+      "4.png",
       "e-commerce.png"
     ],
     "index": 5,
@@ -197,7 +227,8 @@
       "NextJS",
       "Bootstrap",
       "fakestoreapi"
-    ]
+    ],
+    "active": true
   },
   {
     "title": "FoodBuddy - Your culinary companion",
@@ -225,7 +256,8 @@
       "React",
       "Bootstrap",
       "The Meal DB (to fetch recipes)"
-    ]
+    ],
+    "active": true
   },
   {
     "title": "Fake News Detection",
@@ -254,7 +286,8 @@
     ],
     "techStack": [
       "Python - (NLTK, Gensim, TensorFlow, Pandas, NumPy, Matplotlib, Seaborn, and Scikit-learn)"
-    ]
+    ],
+    "active": true
   },
   {
     "title": "Attendance Monitoring System",
@@ -284,6 +317,7 @@
       "Flask",
       "OpenCV",
       "Web3"
-    ]
+    ],
+    "active": true
   }
 ]

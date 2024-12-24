@@ -17,9 +17,11 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
   const getProjects = async () => {
     try {
-      const res = await fetch("/projects.json");
+      const res = await fetch("/api/projects");
+      if (!res.ok) throw new Error("Could not get projects");
       const data = await res.json();
-      setProjects(data);
+      if (data.status !== "success") throw new Error(data.message);
+      setProjects(data.data.filter((project: any) => project.active === true));
     } catch (error) {
       console.log(error);
     } finally {
@@ -33,31 +35,28 @@ const Projects = () => {
   }, []);
   return (
     <>
-        <h3 className="text-5xl text-crimson">Projects</h3>
-        <div className="grid my-3 grid-cols-1 sm:grid-cols-2 px-2 sm:px-32">
-          {loading
-            ? Array(6)
-                .fill(0)
-                .map((_, index) => (
-                  <ProjectItem key={index} loading={loading} />
-                ))
-            : projects &&
-              projects.length > 0 &&
-              projects
-                .map((project, index) => (
-                  <ProjectItem
-                    key={index}
-                    img={project.image}
-                    title={project.title}
-                    description={project.description}
-                    link={project.link}
-                    buttonText={project.deployed}
-                    projectID={project.slug}
-                    loading={loading}
-                    live={project.live}
-                  />
-                ))}
-        </div>
+      <h3 className="text-5xl text-crimson">Projects</h3>
+      <div className="grid my-3 grid-cols-1 sm:grid-cols-2 px-2 sm:px-32">
+        {loading
+          ? Array(6)
+              .fill(0)
+              .map((_, index) => <ProjectItem key={index} loading={loading} />)
+          : projects &&
+            projects.length > 0 &&
+            projects.map((project, index) => (
+              <ProjectItem
+                key={index}
+                img={project.image}
+                title={project.title}
+                description={project.description}
+                link={project.link}
+                buttonText={project.deployed}
+                projectID={project.slug}
+                loading={loading}
+                live={project.live}
+              />
+            ))}
+      </div>
     </>
   );
 };

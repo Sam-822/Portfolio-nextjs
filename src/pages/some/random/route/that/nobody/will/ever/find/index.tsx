@@ -1,4 +1,4 @@
-import { Button, Skeleton } from "@nextui-org/react";
+import { Button, Skeleton, Switch } from "@nextui-org/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -59,6 +59,32 @@ const Projects = () => {
     getProjects();
   }, []);
 
+  const toggleProject = async (project: any) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "Toggle Project?",
+      icon: "question",
+    }).then(async (result) => {
+      if (result.isConfirmed === true) {
+        try {
+          const res = await fetch("/api/projects", {
+            method: "PUT",
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify({
+              id: project.id,
+              active: !project.active,
+            }),
+          });
+          const data = await res.json();
+          console.log({ data });
+          getProjects();
+        } catch (error: any) {
+          toast.error(error.message);
+        }
+      }
+    });
+  };
+
   return (
     <div className="mb-20">
       <div className="my-4 flex justify-end gap-4">
@@ -72,12 +98,16 @@ const Projects = () => {
         >
           Change Sequence
         </Button>
-        <Button as={Link} href="/some/random/route/that/nobody/will/ever/find/project" className="rounded glass border border-white">
+        <Button
+          as={Link}
+          href="/some/random/route/that/nobody/will/ever/find/project"
+          className="rounded glass border border-white"
+        >
           Add New
         </Button>
       </div>
       <div className="relative rounded shadow shadow-white">
-        <table className="w-full whitespace-nowrap">
+        <table className="w-full">
           <thead className="whitespace-nowrap">
             <tr className="py-4">
               <th className="p-4">ID</th>
@@ -86,6 +116,7 @@ const Projects = () => {
               <th className="p-4">Link</th>
               <th className="p-4">Deployment Status</th>
               <th className="p-4">Live Status</th>
+              <th className="p-4">Active</th>
               <th className="p-4">Actions</th>
             </tr>
           </thead>
@@ -95,7 +126,7 @@ const Projects = () => {
                   .fill(0)
                   .map((_, index) => (
                     <tr key={index}>
-                      {Array(6)
+                      {Array(7)
                         .fill(0)
                         .map((_, index) => (
                           <td key={index} className="p-4">
@@ -131,6 +162,14 @@ const Projects = () => {
                       {project.deployed || "-"}
                     </td>
                     <td className="p-3 text-center">{project.live || "-"}</td>
+                    <td className="p-3 text-center">
+                      <Switch
+                        defaultSelected
+                        aria-label="Automatic updates"
+                        isSelected={project?.active ?? false}
+                        onChange={() => toggleProject(project)}
+                      />
+                    </td>
                     <td className="p-3 text-center whitespace-nowrap">
                       <a
                         href={`/project/${project.slug}`}

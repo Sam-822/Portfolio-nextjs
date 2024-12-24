@@ -1,7 +1,7 @@
-import { Button, Skeleton } from "@nextui-org/react";
+import { Button, Image, Skeleton } from "@nextui-org/react";
+import NextImage from "next/image";
 import Link from "next/link";
 import React from "react";
-
 const ProjectItem = (props: any) => {
   const {
     img,
@@ -36,10 +36,16 @@ const ProjectItem = (props: any) => {
     <>
       <div className="glass mx-2 my-4 autoShow text-white rounded-lg overflow-hidden shadow-red transition-all flex flex-col">
         {/* Image Section */}
-        <img
-          src={img ?? "/no-image-found.png"}
+        <Image
+          width={500}
+          height={300}
+          as={NextImage}
+          isBlurred
+          src={img}
+          fallbackSrc="/no-image-found.png"
           alt={title}
           className={`w-full h-60 ${img ? "object-cover" : "object-contain"}`}
+					classNames={{wrapper: 'bg-center bg-no-repeat bg-contain'}}
         />
 
         {/* Card Body */}

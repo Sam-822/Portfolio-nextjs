@@ -19,9 +19,11 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
   const getProjects = async () => {
     try {
-      const res = await fetch("/projects.json");
+      const res = await fetch("/api/projects");
+      if (!res.ok) throw new Error("Could not get projects");
       const data = await res.json();
-      setProjects(data);
+      if (data.status !== "success") throw new Error(data.message);
+      setProjects(data.data.filter((project: any) => project.active === true));
     } catch (error) {
       console.log(error);
     } finally {
