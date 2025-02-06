@@ -1,4 +1,5 @@
 import SequenceEdit from "@/components/SequenceEdit";
+import { apiRequestHandler } from "@/utils/apiRequestHandler";
 import { Button } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import React, { useState, useEffect } from "react";
@@ -10,8 +11,7 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     const fetchProjects = async () => {
-      const res = await fetch("/api/projects");
-      const data = await res.json();
+      const data = await apiRequestHandler('projects')
       setProjects(data.data);
       setLoading(false);
     };

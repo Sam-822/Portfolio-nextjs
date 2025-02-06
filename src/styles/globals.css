@@ -5,6 +5,7 @@
 * {
   --navbar-height: 4rem;
   --swiper-theme-color: crimson;
+	--toastify-color-success: #137400 !important;
 }
 
 body {

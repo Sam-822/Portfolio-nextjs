@@ -14,6 +14,7 @@ import {
   arrayMove,
 } from "@dnd-kit/sortable";
 import { toast } from "react-toastify";
+import { putRequestHandler } from "@/utils/apiRequestHandler";
 
 interface Project {
   slug: string;
@@ -48,14 +49,7 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
     try {
       const sequence = reorderedProjects.map((project) => project.slug);
 
-      const res = await fetch("/api/sequence", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ sequence }),
-      });
-
-      const data = await res.json();
-      if (data.status !== "success") throw new Error(data.message);
+      const data = await putRequestHandler("sequence", { body: { sequence } });
 
       toast.success("Sequence updated successfully!");
     } catch (error: unknown) {

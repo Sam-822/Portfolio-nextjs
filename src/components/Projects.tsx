@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ProjectItem from "./ProjectItem";
 import Link from "next/link";
 import { Button } from "@nextui-org/react";
+import { apiRequestHandler } from "@/utils/apiRequestHandler";
 
 const Projects = () => {
   const [projects, setProjects] = useState([
@@ -19,10 +20,7 @@ const Projects = () => {
   const [loading, setLoading] = useState(true);
   const getProjects = async () => {
     try {
-      const res = await fetch("/api/projects");
-      if (!res.ok) throw new Error("Could not get projects");
-      const data = await res.json();
-      if (data.status !== "success") throw new Error(data.message);
+      const data = await apiRequestHandler('projects');
       setProjects(data.data.filter((project: any) => project.active === true));
     } catch (error) {
       console.log(error);

@@ -1,3 +1,8 @@
+import {
+  apiRequestHandler,
+  deleteRequestHandler,
+  putRequestHandler,
+} from "@/utils/apiRequestHandler";
 import { Button, Skeleton, Switch } from "@nextui-org/react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -13,11 +18,7 @@ const Projects = () => {
   const getProjects = async () => {
     try {
       setLoading(true);
-      const projectsRes = await fetch("/api/projects");
-      if (!projectsRes.ok) throw new Error("Could not get projects");
-      const projectsData = await projectsRes.json();
-      if (projectsData.status !== "success")
-        throw new Error(projectsData.message);
+      const projectsData = await apiRequestHandler("projects");
       setProjects(projectsData.data);
     } catch (error: any) {
       toast.error(error.message);
@@ -39,13 +40,7 @@ const Projects = () => {
     }).then(async (value) => {
       if (value.isConfirmed) {
         try {
-          const deleteRes = await fetch(`/api/projects?id=${ID}`, {
-            method: "DELETE",
-          });
-          if (!deleteRes.ok) throw new Error("Could not delete project");
-          const deleteData = await deleteRes.json();
-          if (deleteData.status !== "success")
-            throw new Error(deleteData.message);
+          const deleteData = await deleteRequestHandler(`projects?id=${ID}`);
           toast.success(deleteData.message);
           getProjects();
         } catch (error: any) {
@@ -67,16 +62,12 @@ const Projects = () => {
     }).then(async (result) => {
       if (result.isConfirmed === true) {
         try {
-          const res = await fetch("/api/projects", {
-            method: "PUT",
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify({
+          const data = await putRequestHandler("projects", {
+            body: {
               id: project.id,
               active: !project.active,
-            }),
+            },
           });
-          const data = await res.json();
-          console.log({ data });
           getProjects();
         } catch (error: any) {
           toast.error(error.message);

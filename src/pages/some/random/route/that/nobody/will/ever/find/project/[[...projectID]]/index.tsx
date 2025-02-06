@@ -1,3 +1,8 @@
+import {
+  apiRequestHandler,
+  postRequestHandler,
+  putRequestHandler,
+} from "@/utils/apiRequestHandler";
 import { Button, Checkbox } from "@nextui-org/react";
 import { useRouter } from "next/router";
 import React, { ChangeEvent, useEffect, useState } from "react";
@@ -45,36 +50,45 @@ const Project = () => {
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
+
     const newErrors = errors;
+
     if (name === "title") {
       if (!value.trim()) newErrors.title = "Title is required";
       else newErrors.title = "";
     }
+
     if (name === "description") {
       if (!value.trim()) newErrors.description = "Description is required";
       else newErrors.description = "";
     }
+
     if (name === "slug") {
       if (!value.trim()) newErrors.slug = "Slug is required";
       else newErrors.slug = "";
     }
+
     if (name === "image_path") {
       if (!value.trim()) newErrors.image_path = "Image Path is required";
       else newErrors.image_path = "";
     }
+
     if (name === "all_images") {
       if (!value) newErrors.all_images = "Atleast one image is required";
       else newErrors.all_images = "";
     }
+
     if (name === "collage_images") {
       if (!value) newErrors.collage_images = "Atleast one image is required";
       else newErrors.collage_images = "";
     }
+
     if (name === "deployed") {
       if (value.length === 0)
         newErrors.deployed = "Deployment status is required";
       else newErrors.deployed = "";
     }
+
     setErrors(newErrors);
   };
 
@@ -104,13 +118,18 @@ const Project = () => {
   const validateForm = () => {
     const newErrors: any = {};
     if (!formData.title.trim()) newErrors.title = "Title is required";
+
     if (!formData.description.trim())
       newErrors.description = "Description is required";
+
     if (!formData.slug.trim()) newErrors.slug = "Slug is required";
+
     if (!formData.image_path.trim())
       newErrors.image_path = "Image Path is required";
+
     if (!formData.all_images)
       newErrors.all_images = "Atleast one image is required";
+
     if (!formData.collage_images)
       newErrors.all_images = "Atleast one image is required";
 
@@ -121,10 +140,8 @@ const Project = () => {
 
   const submitProject = async () => {
     try {
-      const submitRes = await fetch("/api/projects", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const submitData = await postRequestHandler("projects", {
+        body: {
           ...formData,
           all_images: parseInputArray(formData.all_images),
           collage_images: parseInputArray(formData.collage_images),
@@ -132,10 +149,8 @@ const Project = () => {
             .split("|")
             .map((desc) => desc.trim()),
           techStack: formData.techStack.split("|").map((tech) => tech.trim()),
-        }),
+        },
       });
-      const submitData = await submitRes.json();
-      if (submitData.status !== "success") throw new Error(submitData.message);
       router.push("/some/random/route/that/nobody/will/ever/find");
       toast.success(submitData.message);
     } catch (error: any) {
@@ -145,10 +160,7 @@ const Project = () => {
 
   const getProject = async (ID: string) => {
     try {
-      const projectRes = await fetch(`/api/projects?slug=${ID}`);
-      const projectData = await projectRes.json();
-      if (!projectRes.ok)
-        throw new Error(projectData.message || "Could not get project data");
+      const projectData = await apiRequestHandler(`projects?slug=${ID}`);
       setFormData({
         title: projectData?.data?.title,
         description: projectData?.data?.description,
@@ -177,10 +189,8 @@ const Project = () => {
 
   const updateProject = async () => {
     try {
-      const submitRes = await fetch("/api/projects", {
-        method: "PUT",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const submitData = await putRequestHandler("projects", {
+        body: {
           id: projectData.index,
           ...formData,
           all_images: parseInputArray(formData.all_images),
@@ -189,12 +199,10 @@ const Project = () => {
             .split("|")
             .map((desc) => desc.trim()),
           techStack: formData.techStack.split("|").map((tech) => tech.trim()),
-        }),
+        },
       });
-      const submitData = await submitRes.json();
       if (submitData.status !== "success") throw new Error(submitData.message);
       router.push("/some/random/route/that/nobody/will/ever/find");
-      // toast.success(submitData.message);
       Swal.fire({
         title: "Success!",
         text: submitData.message,
@@ -379,7 +387,7 @@ const Project = () => {
           value={formData.descriptionList}
           onChange={handleFormChange}
           placeholder="eg. Bullet point 1 | Bullet point 2 | Bullet point 3"
-					rows={5}
+          rows={5}
         ></textarea>
       </div>
       {/* Tech Stack */}
@@ -392,7 +400,7 @@ const Project = () => {
           value={formData.techStack}
           onChange={handleFormChange}
           placeholder="eg. Technology 1 | Technology 2 | Technology 3"
-					rows={5}
+          rows={5}
         ></textarea>
       </div>
       {/* Submit */}
