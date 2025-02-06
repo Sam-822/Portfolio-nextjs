@@ -51,7 +51,7 @@ const ProjectTable: React.FC<ProjectTableProps> = ({
 
       const data = await putRequestHandler("sequence", { body: { sequence } });
 
-      toast.success("Sequence updated successfully!");
+      toast.success(data.message);
     } catch (error: unknown) {
       if (error instanceof Error) {
         toast.error(error.message); // Safe to access `message` property

@@ -62,7 +62,7 @@ const Projects = () => {
     }).then(async (result) => {
       if (result.isConfirmed === true) {
         try {
-          const data = await putRequestHandler("projects", {
+          await putRequestHandler("projects", {
             body: {
               id: project.id,
               active: !project.active,
