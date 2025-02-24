@@ -50,7 +50,6 @@ export const apiRequestHandler = async (
     // Parse the response as JSON if "fileName" is not provided
     if (!fileName) {
       const data = await res.json();
-
       // Check for a successful response status in the returned data
       if (data.status !== "success")
         throw new Error(

@@ -2,7 +2,19 @@ import { Button, Image, Skeleton } from "@nextui-org/react";
 import NextImage from "next/image";
 import Link from "next/link";
 import React from "react";
-const ProjectItem = (props: any) => {
+
+interface ProjectProps {
+  img?: string;
+  title?: string;
+  description?: string;
+  link?: string;
+  buttonText?: boolean;
+  projectID?: string;
+  live?: boolean;
+  loading?: boolean;
+}
+
+const ProjectItem = (props: ProjectProps) => {
   const {
     img,
     title,
@@ -45,7 +57,7 @@ const ProjectItem = (props: any) => {
           fallbackSrc="/no-image-found.png"
           alt={title}
           className={`w-full h-60 ${img ? "object-cover" : "object-contain"}`}
-					classNames={{wrapper: 'bg-center bg-no-repeat bg-contain'}}
+          classNames={{ wrapper: "bg-center bg-no-repeat bg-contain" }}
         />
 
         {/* Card Body */}
