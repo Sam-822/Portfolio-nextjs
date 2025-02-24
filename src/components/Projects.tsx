@@ -5,22 +5,23 @@ import { Button } from "@nextui-org/react";
 import { apiRequestHandler } from "@/utils/apiRequestHandler";
 
 const Projects = () => {
-  const [projects, setProjects] = useState([
+  const [projects, setProjects] = useState<
     {
-      title: null,
-      description: null,
-      deployed: null,
-      slug: null,
-      link: null,
-      image: null,
-      index: 0,
-      live: null,
-    },
-  ]);
+      image?: string;
+      title?: string;
+      description?: string;
+      link?: string;
+      deployed?: boolean;
+      slug?: string;
+      live?: boolean;
+      loading?: boolean;
+      index: number;
+    }[]
+  >([]);
   const [loading, setLoading] = useState(true);
   const getProjects = async () => {
     try {
-      const data = await apiRequestHandler('projects');
+      const data = await apiRequestHandler("projects");
       setProjects(data.data.filter((project: any) => project.active === true));
     } catch (error) {
       console.log(error);
