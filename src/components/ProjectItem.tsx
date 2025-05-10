@@ -1,5 +1,6 @@
-import { Button, Image, Skeleton } from "@nextui-org/react";
-import NextImage from "next/image";
+import { Button, Skeleton } from "@nextui-org/react";
+import Image from "next/image";
+// import NextImage from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -51,13 +52,10 @@ const ProjectItem = (props: ProjectProps) => {
         <Image
           width={500}
           height={300}
-          as={NextImage}
-          isBlurred
-          src={img}
-          fallbackSrc="/no-image-found.png"
-          alt={title}
+          src={img || "/no-image-found.png"}
+          alt={title || ""}
           className={`w-full h-60 ${img ? "object-cover" : "object-contain"}`}
-          classNames={{ wrapper: "bg-center bg-no-repeat bg-contain" }}
+          // classNames={{ wrapper: "bg-center bg-no-repeat bg-contain" }}
         />
 
         {/* Card Body */}

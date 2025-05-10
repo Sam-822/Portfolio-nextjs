@@ -20,6 +20,9 @@ const About = () => {
             React, ensuring seamless user experiences.
           </li>
           <li>
+            Angular: I've worked on 2 live projects using angular.
+          </li>
+          <li>
             MongoDB: I handle data storage and retrieval efficiently, leveraging
             MongoDB for robust backend development.
           </li>
