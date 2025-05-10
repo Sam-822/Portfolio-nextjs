@@ -104,6 +104,7 @@ const Project = () => {
                       currentProject.collage_images[0] : 
 											'/no-image-found.png'
                     }
+										loading="eager"
                   />
                 </motion.div>
                 <motion.div
